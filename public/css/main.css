@@ -16,4 +16,8 @@
 }
 .fa:hover {
   color: #6e2c7e;
+  cursor: pointer;
+}
+.imgContainer {
+  display: flex;
 }

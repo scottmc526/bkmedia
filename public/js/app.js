@@ -4,6 +4,6 @@ app.config(function($routeProvider) {
   $routeProvider
   .when('/', {
     templateUrl: 'partials/index.html',
-    controller: 'mainController'
+    controller: 'stepOneController'
   })
 })
