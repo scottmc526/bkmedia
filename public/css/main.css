@@ -6,7 +6,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
   width: 100%;
   height: auto;
+  font-family: 'Raleway', sans-serif;
+}
+
+.title {
+  color: #6e2c7e;
+}
+.fa:hover {
+  color: #6e2c7e;
 }
