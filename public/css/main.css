@@ -2,7 +2,8 @@
   height: 100vh;
   width: 100vw;
 }
-.stepOne {
+
+.steps {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,13 +12,29 @@
   font-family: 'Raleway', sans-serif;
 }
 
+.steps span {
+  color: #9d4eb4;
+}
+
 .title {
   color: #6e2c7e;
 }
+
 .fa:hover {
-  color: #6e2c7e;
+  color: #9e50b5;
   cursor: pointer;
 }
+
 .imgContainer {
   display: flex;
+}
+
+.smiley {
+  margin: 2px;
+}
+
+.finePrint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
