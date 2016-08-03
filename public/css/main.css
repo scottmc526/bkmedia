@@ -41,6 +41,10 @@
 .infoRow {
   background-color: #f3f3f3;
 }
+td div {
+  display: flex;
+  justify-content: center;
+}
 /*
 th {
   transform: rotate(-90deg);
