@@ -8,15 +8,15 @@ app.controller('stepOneController', function($scope) {
     $scope.familyArray = [];
     $scope.warningMessage = false;
     $scope.stepTwoTable = true;
-    $scope.familyMembers = index + 1
+
+    if (index < 10) {
+      $scope.familyMembers = index + 1
+    } else {
+      alert ('exceeded maximum family members')
+    }
 
     for (var i = 1; i <= $scope.familyMembers; i++) {
       $scope.familyArray.push(i)
     }
-  }
-
-  $scope.addRow = function() {
-   $scope.counter = $scope.familyArray.length
-
   }
 })
