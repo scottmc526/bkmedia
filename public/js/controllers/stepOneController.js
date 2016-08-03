@@ -9,11 +9,7 @@ app.controller('stepOneController', function($scope) {
     $scope.warningMessage = false;
     $scope.stepTwoTable = true;
 
-    if (index < 10) {
-      $scope.familyMembers = index + 1
-    } else {
-      alert ('exceeded maximum family members')
-    }
+    index < 10 ? $scope.familyMembers = index + 1 : alert ('exceeded maximum family members');
 
     for (var i = 1; i <= $scope.familyMembers; i++) {
       $scope.familyArray.push(i)
