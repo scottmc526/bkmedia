@@ -38,3 +38,10 @@
   flex-direction: column;
   align-items: center;
 }
+.infoRow {
+  background-color: #f3f3f3;
+}
+/*
+th {
+  transform: rotate(-90deg);
+}*/

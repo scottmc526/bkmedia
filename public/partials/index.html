@@ -15,5 +15,82 @@
       <h5>The following dental savings information chart compares actual costs to discounted costs for common dental services.</h5>
       <h5>We've already filled in a few boxes for you to help you get started. </h5>
     </div>
+    <br>
+    <div class='table-responsive'>
+      <table class='table table-bordered'>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Oral Exam</th>
+            <th>Cleaning</th>
+            <th>Filling</th>
+            <th>X-rays</th>
+            <th>Root Canal</th>
+            <th>Crown</th>
+            <th>Upper Denture</th>
+            <th>Braces</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class='infoRow'>
+            <th scope='row'># of Individuals</th>
+            <td>
+              <label>Select All</label>
+              <br>
+              <input type="checkbox">
+            </td>
+            <td>
+              <label>Select All</label>
+              <br>
+              <input type="checkbox">
+            </td>
+            <td>
+              <label>Select All</label>
+              <br>
+              <input type="checkbox">
+            </td>
+            <td>
+              <label>Select All</label>
+              <br>
+              <input type="checkbox">
+            </td>
+            <td>
+              <label>Select All</label>
+              <br>
+              <input type="checkbox">
+            </td>
+            <td>
+              <label>Select All</label>
+              <br>
+              <input type="checkbox">
+            </td>
+            <td>
+              <label>Select All</label>
+              <br>
+              <input type="checkbox">
+            </td>
+            <td>
+              <label>Select All</label>
+              <br>
+              <input type="checkbox">
+            </td>
+            <td>Annual Savings*</td>
+          </tr>
+          <tr ng-repeat='members in familyArray'>
+            <th scope='row'>Person 1</th>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>$100</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
