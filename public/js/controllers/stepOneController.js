@@ -5,7 +5,6 @@ app.controller('stepOneController', function($scope) {
   $scope.stepTwoTable = false;
 
   $scope.selectMembers = function(index) {
-    $scope.personCounter = 0;
     $scope.familyArray = [];
     $scope.warningMessage = false;
     $scope.stepTwoTable = true;
@@ -14,5 +13,10 @@ app.controller('stepOneController', function($scope) {
     for (var i = 1; i <= $scope.familyMembers; i++) {
       $scope.familyArray.push(i)
     }
+  }
+
+  $scope.addRow = function() {
+   $scope.counter = $scope.familyArray.length
+
   }
 })
