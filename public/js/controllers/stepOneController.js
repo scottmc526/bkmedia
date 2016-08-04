@@ -1,6 +1,18 @@
 app.controller('stepOneController', function($scope) {
   $scope.numberArray = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
-  $scope.faces = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  $scope.smileyFaces = [
+    {id: 1, className: 'unselected'},
+    {id: 2, className: 'unselected'},
+    {id: 3, className: 'unselected'},
+    {id: 4, className: 'unselected'},
+    {id: 5, className: 'unselected'},
+    {id: 6, className: 'unselected'},
+    {id: 7, className: 'unselected'},
+    {id: 8, className: 'unselected'},
+    {id: 9, className: 'unselected'},
+    {id: 10, className: 'unselected'},
+  ];
 
   $scope.tableColumns = [
     {name: 'Oral Exam', selected: false, savings: 100},
@@ -26,6 +38,16 @@ app.controller('stepOneController', function($scope) {
 
     for (var i = 1; i <= $scope.familyMembers; i++) {
       $scope.familyArray.push(i);
+    }
+  }
+
+  $scope.highlightFaces = function(familySize) {
+    for (var i = 0; i < $scope.smileyFaces.length; i++) {
+      $scope.smileyFaces[i]['className'] = 'unselected';
+    }
+
+    for (var i = 0; i < familySize; i++) {
+      $scope.smileyFaces[i]['className'] = 'selected';
     }
   }
 

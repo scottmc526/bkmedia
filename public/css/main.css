@@ -25,6 +25,14 @@
   cursor: pointer;
 }
 
+.unselected {
+  color: black;
+}
+
+.selected {
+  color: #9e50b5;
+}
+
 .imgContainer {
   display: flex;
 }
@@ -45,6 +53,7 @@ td div {
   display: flex;
   justify-content: center;
 }
+
 /*
 th {
   transform: rotate(-90deg);
