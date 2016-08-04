@@ -35,75 +35,22 @@
         <tbody>
           <tr class='infoRow'>
             <th scope='row'># of Individuals</th>
-            <td>
+            <td ng-repeat='column in tableColumns'>
               <label>Select All</label>
               <br>
               <div>
-                <input type="checkbox">
+                <input type="checkbox" ng-model='column.name' ng-click='checkAll()'>
               </div>
             </td>
-            <td>
-              <label>Select All</label>
-              <br>
-              <div>
-                <input type="checkbox">
-              </div>
-            </td>
-            <td>
-              <label>Select All</label>
-              <br>
-              <div>
-                <input type="checkbox">
-              </div>
-            </td>
-            <td>
-              <label>Select All</label>
-              <br>
-              <div>
-                <input type="checkbox">
-              </div>
-            </td>
-            <td>
-              <label>Select All</label>
-              <br>
-              <div>
-                <input type="checkbox">
-              </div>
-            </td>
-            <td>
-              <label>Select All</label>
-              <br>
-              <div>
-                <input type="checkbox">
-              </div>
-            </td>
-            <td>
-              <label>Select All</label>
-              <br>
-              <div>
-                <input type="checkbox">
-              </div>
-            </td>
-            <td>
-              <label>Select All</label>
-              <br>
-              <div>
-                <input type="checkbox">
-              </div>
-            </td>
-
             <td>Annual Savings*</td>
           </tr>
-          <tr ng-repeat='members in familyArray'>
+          <tr ng-repeat='member in familyArray'>
             <th scope='row'>Person {{numberArray[$index + 1]}}</th>
-            <td><div><input type="checkbox"></div></td>
-            <td><div><input type="checkbox"></div></td>
-            <td><div><input type="checkbox"></div></td>
-            <td><div><input type="checkbox"></div></td>
-            <td><div><input type="checkbox"></div></td>
-            <td><div><input type="checkbox"></div></td>
-            <td><div><input type="checkbox"></div></td>
-            <td><div><input type="checkbox"></div></td>
+            <td ng-repeat='column in tableColumns'>
+              <div>
+                <input type="checkbox" ng-model='column.name'>
+              </div>
+            </td>
             <td>$100</td>
           </tr>
         </tbody>
