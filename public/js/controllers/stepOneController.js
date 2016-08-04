@@ -1,7 +1,17 @@
 app.controller('stepOneController', function($scope) {
   $scope.numberArray = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
   $scope.faces = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  $scope.tableColumns = [{name: 'Oral'}, {name: 'Cleaning'}, {name: 'Filling'}, {name: 'Xray'}, {name: 'Root'}, {name: 'Crown'}, {name: 'Upper'}, {name: 'Braces'}]
+
+  $scope.tableColumns = [
+    {name: 'Oral Exam', selected: false, savings: 100},
+    {name: 'Cleaning', selected: false, savings: 200},
+    {name: 'Filling', selected: false, savings: 150},
+    {name: 'X-Rays', selected: false, savings: 300},
+    {name: 'Root Canal', selected: false, savings: 50},
+    {name: 'Crown', selected: false, savings: 75},
+    {name: 'Upper Denture', selected: false, savings: 125},
+    {name: 'Braces', selected: false, savings: 250}
+  ]
 
 
   $scope.warningMessage = true;

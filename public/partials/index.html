@@ -21,14 +21,7 @@
         <thead>
           <tr>
             <th></th>
-            <th>Oral Exam</th>
-            <th>Cleaning</th>
-            <th>Filling</th>
-            <th>X-rays</th>
-            <th>Root Canal</th>
-            <th>Crown</th>
-            <th>Upper <br> Denture</th>
-            <th>Braces</th>
+            <th ng-repeat='column in tableColumns'>{{column.name}}</th>
             <th></th>
           </tr>
         </thead>
@@ -39,7 +32,7 @@
               <label>Select All</label>
               <br>
               <div>
-                <input type="checkbox" ng-model='column.name' ng-click='checkAll()'>
+                <input type="checkbox" name='{{column.name}}' ng-click='checkAll()'>
               </div>
             </td>
             <td>Annual Savings*</td>
@@ -48,7 +41,7 @@
             <th scope='row'>Person {{numberArray[$index + 1]}}</th>
             <td ng-repeat='column in tableColumns'>
               <div>
-                <input type="checkbox" ng-model='column.name'>
+                <input type="checkbox" ng-model='column'>
               </div>
             </td>
             <td>$100</td>
