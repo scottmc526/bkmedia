@@ -23,7 +23,7 @@ app.controller('stepOneController', function($scope) {
     {name: 'Crown', selected: false, savings: 75},
     {name: 'Upper Denture', selected: false, savings: 125},
     {name: 'Braces', selected: false, savings: 250}
-  ]
+  ];
 
 
   $scope.warningMessage = true;
@@ -38,18 +38,18 @@ app.controller('stepOneController', function($scope) {
 
     for (var i = 1; i <= $scope.familyMembers; i++) {
       $scope.familyArray.push(i);
-    }
-  }
+    };
+  };
 
   $scope.highlightFaces = function(familySize) {
     $scope.smileyFaces.forEach(function(face) {
-      face['className'] = 'unselected'
-    })
+      face['className'] = 'unselected';
+    });
 
     for (var face = 0; face < familySize; face++) {
       $scope.smileyFaces[face]['className'] = 'selected';
-    }
-  }
+    };
+  };
 
   $scope.checkAll = function() {
     $scope.checkBox = !$scope.checkBox
@@ -57,5 +57,5 @@ app.controller('stepOneController', function($scope) {
     //   console.log(member);
     //   member.Selected = $scope.selectedAll;
     // });
-  }
-})
+  };
+});

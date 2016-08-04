@@ -4,7 +4,7 @@
     <h3><strong><span>Step 1:</span> Select how many people are in your household  </strong><i class="fa fa-question-circle fa-ul" aria-hidden="true"></i></h3>
     <div class='imgContainer'>
       <div ng-repeat='face in smileyFaces'>
-        <i ng-click='selectMembers($index + 1); highlightFaces($index + 1)' class="{{face.className}} fa fa-smile-o fa-4x smiley" aria-hidden="true"></i>
+        <i ng-click='selectMembers($index + 1); highlightFaces($index + 1)' class="{{face.className}} fa fa-smile-o fa-4x" aria-hidden="true"></i>
       </div>
     </div>
     <h5 ng-show='warningMessage'>Please Select how many people are in your household before moving to step 2.</h5>

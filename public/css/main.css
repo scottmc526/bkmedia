@@ -26,19 +26,17 @@
 }
 
 .unselected {
+  margin: 2px;
   color: black;
 }
 
 .selected {
+  margin: 2px;
   color: #9e50b5;
 }
 
 .imgContainer {
   display: flex;
-}
-
-.smiley {
-  margin: 2px;
 }
 
 .finePrint {
