@@ -42,12 +42,12 @@ app.controller('stepOneController', function($scope) {
   }
 
   $scope.highlightFaces = function(familySize) {
-    for (var i = 0; i < $scope.smileyFaces.length; i++) {
-      $scope.smileyFaces[i]['className'] = 'unselected';
-    }
+    $scope.smileyFaces.forEach(function(face) {
+      face['className'] = 'unselected'
+    })
 
-    for (var i = 0; i < familySize; i++) {
-      $scope.smileyFaces[i]['className'] = 'selected';
+    for (var face = 0; face < familySize; face++) {
+      $scope.smileyFaces[face]['className'] = 'selected';
     }
   }
 
