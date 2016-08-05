@@ -73,7 +73,21 @@ app.controller('stepOneController', function($scope) {
   // }
 
   $scope.individualSavingsCalc = function(person ,column) {
-    $scope.familyArray[person]['savings'] += $scope.tableColumns[column]['savings']
-    console.log($scope.familyArray);
+    $scope.tableColumns[column]['selected'] = !$scope.tableColumns[column]['selected']
+    $scope.familyArray[person]['selected'] = true
+    $scope.columnChecked = $scope.tableColumns[column]['selected']
+    $scope.correctPerson = $scope.familyArray[person]['selected']
+
+    // console.log('Column:', $scope.columnChecked, 'Person:', $scope.correctPerson);
+
+    if ($scope.correctPerson) {
+      $scope.familyArray[person]['savings'] += $scope.tableColumns[column]['savings']
+    }
+  }
+
+  $scope.combinedSavings = function() {
+    for (var i = 0; i < familyArray.length; i++) {
+      $scope.totalSavings += $scope.familyArray[i]['savings']
+    }
   }
 });
