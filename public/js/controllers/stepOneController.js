@@ -1,5 +1,6 @@
 app.controller('stepOneController', function($scope) {
   $scope.numberArray = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
+  $scope.totalSavings = 0;
   $scope.savingsArray = [];
 
   $scope.smileyFaces = [
@@ -38,7 +39,7 @@ app.controller('stepOneController', function($scope) {
     familySize < 11 ? $scope.familyMembers = familySize : alert ('exceeded maximum family members');
 
     for (var i = 1; i <= $scope.familyMembers; i++) {
-      $scope.familyArray.push(i);
+      $scope.familyArray.push({person: i, savings: 0, selected: false});
     };
   };
 
@@ -57,12 +58,22 @@ app.controller('stepOneController', function($scope) {
   //
   // };
 
-  $scope.savingsCalc = function(index) {
-    $scope.savings = 0;
-    $scope.savingsArray.push($scope.tableColumns[index]['savings'])
-    for (var i = 0; i < $scope.savingsArray.length; i++) {
-      $scope.savings += $scope.savingsArray[i]
-    }
-    console.log($scope.savings);
+  // $scope.savingsCalc = function(index) {
+  //   console.log(index);
+  //   $scope.tableColumns[index]['selected'] = !$scope.tableColumns[index]['selected']
+  //   if ($scope.tableColumns[index]['selected'] === true) {
+  //     $scope.savingsArray.push($scope.tableColumns[index]['savings'])
+  //   } else {
+  //       $scope.savingsArray.push(-$scope.tableColumns[index]['savings'])
+  //   }
+  //
+  //   for (var i = 0; i < $scope.savingsArray.length; i++) {
+  //     $scope.savings += $scope.savingsArray[i]
+  //   }
+  // }
+
+  $scope.individualSavingsCalc = function(person ,column) {
+    $scope.familyArray[person]['savings'] += $scope.tableColumns[column]['savings']
+    console.log($scope.familyArray);
   }
 });
