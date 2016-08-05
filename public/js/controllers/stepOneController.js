@@ -71,7 +71,7 @@ app.controller('stepOneController', function($scope) {
   //   }
   // }
 
-  $scope.individualSavingsCalc = function(person ,column) {
+  $scope.individualSavings = function(person ,column) {
     $scope.tableColumns[column]['selected'] = !$scope.tableColumns[column]['selected']
     $scope.familyArray[person]['selected'] = true
     $scope.columnChecked = $scope.tableColumns[column]['selected']
@@ -90,5 +90,11 @@ app.controller('stepOneController', function($scope) {
     for (var i = 0; i < $scope.familyArray.length; i++) {
       $scope.totalSavings += $scope.familyArray[i]['savings']
     }
+  }
+
+  $scope.movieTickets = function () {
+    //average cost of movie ticket = $8.43 according to google
+    $scope.tickets = 0;
+    $scope.tickets = Math.floor($scope.totalSavings / 8.43)
   }
 });
