@@ -20,6 +20,14 @@
   color: #6e2c7e;
 }
 
+.vertical-title {
+  font-weight: lighter;
+}
+
+label {
+  font-weight: lighter;
+}
+
 .fa:hover {
   color: #9e50b5;
   cursor: pointer;
@@ -47,11 +55,27 @@
 .infoRow {
   background-color: #f3f3f3;
 }
+
+.tableHeaders {
+  height: 100px;
+}
+
+.tableHeaders th {
+  transform: rotate(-90deg);
+}
+
+.table-bordered {
+  border: none;
+}
+
 td div {
   display: flex;
   justify-content: center;
 }
 
+.bold {
+  font-weight: bold;
+}
 /*
 th {
   transform: rotate(-90deg);

@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='steps'>
     <h1 class='title'>How Much Money Could YOU Save with Carefree Dental?</h1>
-    <h3><strong><span>Step 1:</span> Select how many people are in your household  </strong><i class="fa fa-question-circle fa-ul" aria-hidden="true"></i></h3>
+    <h3><span>Step 1:</span> Select how many people are in your household  <i class="fa fa-question-circle fa-ul" aria-hidden="true"></i></h3>
     <div class='imgContainer'>
       <div ng-repeat='face in smileyFaces'>
         <i ng-click='selectMembers($index + 1); highlightFaces($index + 1)' class="{{face.className}} fa fa-smile-o fa-4x" aria-hidden="true"></i>
@@ -10,7 +10,7 @@
     <h5 ng-show='warningMessage'>Please Select how many people are in your household before moving to step 2.</h5>
   </div>
   <div class='steps' ng-show='stepTwoTable'>
-    <h3><strong><span>Step 2:</span> See how much you could save by selecting the services you need below:</h3>
+    <h3><span>Step 2:</span> See how much you could save by selecting the services you need below:</h3>
     <div class='finePrint'>
       <h5>The following dental savings information chart compares actual costs to discounted costs for common dental services.</h5>
       <h5>We've already filled in a few boxes for you to help you get started. </h5>
@@ -19,9 +19,9 @@
     <div class='table-responsive'>
       <table class='table table-bordered'>
         <thead>
-          <tr>
+          <tr class='tableHeaders'>
             <th></th>
-            <th ng-repeat='column in tableColumns'>{{column.name}}</th>
+            <th ng-repeat='column in tableColumns' class='vertical-title'>{{column.name}}</th>
             <th></th>
           </tr>
         </thead>
@@ -32,16 +32,16 @@
               <label>Select All</label>
               <br>
               <div>
-                <input type="checkbox" name='{{column.name}}' ng-click='checkAll()'>
+                <input type="checkbox" ng-model='column.name' ng-click='checkAll()'>
               </div>
             </td>
-            <td>Annual Savings*</td>
+            <td class='bold'>Annual Savings*</td>
           </tr>
           <tr ng-repeat='member in familyArray'>
-            <th scope='row'>Person {{numberArray[$index + 1]}}</th>
+            <th class='vertical-title' scope='row'>Person {{numberArray[$index + 1]}}</th>
             <td ng-repeat='column in tableColumns'>
               <div>
-                <input type="checkbox" ng-model='column'>
+                <input type="checkbox" ng-model='column.name'>
               </div>
             </td>
             <td>$100</td>
