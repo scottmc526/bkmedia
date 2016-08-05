@@ -49,6 +49,21 @@
         </tbody>
       </table>
     </div>
-    <h1 ng-click='selectMembers(familyArray.length + 1); highlightFaces(familyArray.length)'>+Add Another Person</h1>
+    <div class='addAnother'>
+      <h5 ng-click='selectMembers(familyArray.length + 1); highlightFaces(familyArray.length)'><u>+Add Another Person</u></h5>
+      <p>* This is an example only. Actual costs and savings vary by provider, service and geographical area. Cost of card: $191.40 ($15.95/mo for 12 months)<p>
+    </div>
+    <div class='costAndSavingsContainer'>
+      <div class='costAndSavingsText card'>
+        <h4 class='bold'>Cost of the Carefree Dental Card:</h4>
+        <h1>$15.95/mo</h1>
+        <p>Actual cost of the Carefree Dental card is $191.40</p>
+      </div>
+      <div class='costAndSavingsText'>
+        <h4 class='bold'>Estimated Yearly Savings:</h4>
+        <h1>$680</h1>
+        <p>That's over 500 movie tickets</p>
+      </div>
+    </div>
   </div>
 </div>
