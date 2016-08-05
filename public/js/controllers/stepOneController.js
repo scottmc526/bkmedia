@@ -1,5 +1,6 @@
 app.controller('stepOneController', function($scope) {
   $scope.numberArray = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
+  $scope.savingsArray = [];
 
   $scope.smileyFaces = [
     {id: 1, className: 'unselected'},
@@ -50,12 +51,18 @@ app.controller('stepOneController', function($scope) {
       $scope.smileyFaces[face]['className'] = 'selected';
     };
   };
+  //
+  // $scope.checkAll = function() {
+  //   $scope.checkBox = !$scope.checkBox
+  //
+  // };
 
-  $scope.checkAll = function() {
-    $scope.checkBox = !$scope.checkBox
-    // $scope.familyArray.forEach(function (member) {
-    //   console.log(member);
-    //   member.Selected = $scope.selectedAll;
-    // });
-  };
+  $scope.savingsCalc = function(index) {
+    $scope.savings = 0;
+    $scope.savingsArray.push($scope.tableColumns[index]['savings'])
+    for (var i = 0; i < $scope.savingsArray.length; i++) {
+      $scope.savings += $scope.savingsArray[i]
+    }
+    console.log($scope.savings);
+  }
 });

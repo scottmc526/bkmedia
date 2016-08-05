@@ -39,9 +39,9 @@
           </tr>
           <tr ng-repeat='member in familyArray'>
             <th class='vertical-title' scope='row'>Person {{numberArray[$index + 1]}}</th>
-            <td ng-repeat='column in tableColumns'>
+            <td ng-repeat='column in tableColumns track by $index'>
               <div>
-                <input type="checkbox" ng-model='column.name'>
+                <input type="checkbox" ng-model='column.name' ng-click='savingsCalc($index)'>
               </div>
             </td>
             <td>$100</td>
