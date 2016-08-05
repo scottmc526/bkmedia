@@ -1,6 +1,5 @@
 app.controller('stepOneController', function($scope) {
   $scope.numberArray = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
-  $scope.totalSavings = 0;
   $scope.savingsArray = [];
 
   $scope.smileyFaces = [
@@ -86,7 +85,9 @@ app.controller('stepOneController', function($scope) {
   }
 
   $scope.combinedSavings = function() {
-    for (var i = 0; i < familyArray.length; i++) {
+    $scope.totalSavings = 0;
+
+    for (var i = 0; i < $scope.familyArray.length; i++) {
       $scope.totalSavings += $scope.familyArray[i]['savings']
     }
   }

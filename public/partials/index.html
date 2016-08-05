@@ -41,7 +41,7 @@
             <th class='vertical-title' scope='row'>Person {{numberArray[$index + 1]}}</th>
             <td ng-repeat='column in tableColumns'>
               <div>
-                <input type="checkbox" ng-click='individualSavingsCalc(member.person - 1, $index)'>
+                <input type="checkbox" ng-click='individualSavingsCalc(member.person - 1, $index); combinedSavings()'>
               </div>
             </td>
             <td>${{member.savings}}</td>
