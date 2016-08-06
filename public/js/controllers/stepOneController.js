@@ -1,4 +1,6 @@
 app.controller('stepOneController', function($scope) {
+  $scope.warningMessage = true;
+  $scope.stepTwoTable = false;
   $scope.numberArray = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
   $scope.savingsArray = [];
 
@@ -26,10 +28,6 @@ app.controller('stepOneController', function($scope) {
     {name: 'Braces', selected: false, savings: 250}
   ];
 
-
-  $scope.warningMessage = true;
-  $scope.stepTwoTable = false;
-
   $scope.selectMembers = function(familySize) {
     $scope.familyArray = [];
     $scope.warningMessage = false;
@@ -51,50 +49,29 @@ app.controller('stepOneController', function($scope) {
       $scope.smileyFaces[face]['className'] = 'selected';
     };
   };
-  //
-  // $scope.checkAll = function() {
-  //   $scope.checkBox = !$scope.checkBox
-  //
-  // };
-
-  // $scope.savingsCalc = function(index) {
-  //   console.log(index);
-  //   $scope.tableColumns[index]['selected'] = !$scope.tableColumns[index]['selected']
-  //   if ($scope.tableColumns[index]['selected'] === true) {
-  //     $scope.savingsArray.push($scope.tableColumns[index]['savings'])
-  //   } else {
-  //       $scope.savingsArray.push(-$scope.tableColumns[index]['savings'])
-  //   }
-  //
-  //   for (var i = 0; i < $scope.savingsArray.length; i++) {
-  //     $scope.savings += $scope.savingsArray[i]
-  //   }
-  // }
 
   $scope.individualSavings = function(person ,column) {
-    $scope.tableColumns[column]['selected'] = !$scope.tableColumns[column]['selected']
-    $scope.familyArray[person]['selected'] = true
-    $scope.columnChecked = $scope.tableColumns[column]['selected']
-    $scope.correctPerson = $scope.familyArray[person]['selected']
-
-    // console.log('Column:', $scope.columnChecked, 'Person:', $scope.correctPerson);
+    $scope.tableColumns[column]['selected'] = !$scope.tableColumns[column]['selected'];
+    $scope.familyArray[person]['selected'] = true;
+    $scope.columnChecked = $scope.tableColumns[column]['selected'];
+    $scope.correctPerson = $scope.familyArray[person]['selected'];
 
     if ($scope.correctPerson) {
-      $scope.familyArray[person]['savings'] += $scope.tableColumns[column]['savings']
+      $scope.familyArray[person]['savings'] += $scope.tableColumns[column]['savings'];
     }
-  }
+  };
 
   $scope.combinedSavings = function() {
     $scope.totalSavings = 0;
 
     for (var i = 0; i < $scope.familyArray.length; i++) {
-      $scope.totalSavings += $scope.familyArray[i]['savings']
-    }
-  }
+      $scope.totalSavings += $scope.familyArray[i]['savings'];
+    };
+  };
 
   $scope.movieTickets = function () {
     //average cost of movie ticket = $8.43 according to google
     $scope.tickets = 0;
     $scope.tickets = Math.floor($scope.totalSavings / 8.43)
-  }
+  };
 });
