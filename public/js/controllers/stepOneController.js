@@ -51,14 +51,9 @@ app.controller('stepOneController', function($scope) {
   };
 
   $scope.individualSavings = function(person ,column) {
-    $scope.tableColumns[column]['selected'] = !$scope.tableColumns[column]['selected'];
     $scope.familyArray[person]['selected'] = true;
-    $scope.columnChecked = $scope.tableColumns[column]['selected'];
-    $scope.correctPerson = $scope.familyArray[person]['selected'];
 
-    if ($scope.correctPerson) {
-      $scope.familyArray[person]['savings'] += $scope.tableColumns[column]['savings'];
-    }
+    $scope.familyArray[person]['savings'] += $scope.tableColumns[column]['savings'];
   };
 
   $scope.combinedSavings = function() {
