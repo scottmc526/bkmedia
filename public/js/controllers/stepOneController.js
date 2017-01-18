@@ -41,7 +41,7 @@ app.controller('stepOneController', function($scope) {
   };
 
   $scope.highlightFaces = function(familySize) {
-    $scope.smileyFaces.forEach(function(face) {
+    $scope.smileyFaces.forEach(face => {
       face['className'] = 'unselected';
     });
 
